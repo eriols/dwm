@@ -63,6 +63,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *lockcmd[] = { "xscreensaver-command", "--lock", NULL };
 
+#include <X11/XF86keysym.h>
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -99,6 +100,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	{0,                             XF86XK_MonBrightnessUp, spawn, SHCMD("brightnessctl set +10%")},
+	{0,                             XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set -10%")},
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
