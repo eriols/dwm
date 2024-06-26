@@ -101,7 +101,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{0,                             XF86XK_MonBrightnessUp, spawn, SHCMD("brightnessctl set +10%")},
-	{0,                             XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set -10%")},
+	{0,                             XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set 10%-")},
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
